@@ -2,7 +2,7 @@ import ListTile from "./List-tile";
 
 export default async function Data() {
   const response = await fetch(
-    "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=1281325f-c9b5-4f1f-99bb-a8d9a3105ad6"
+    `https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=${process.env.API_KEY}`
   );
   const data = await response.json();
 
