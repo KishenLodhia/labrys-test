@@ -1,9 +1,6 @@
-import { NextResponse, type NextRequest } from 'next/server'
-import { Token } from "../../../types/token"
+import { NextResponse } from 'next/server'
 
-
-
-export async function GET(request: NextRequest) {
+export async function GET() {
 
     const response = await fetch(
         `https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=${process.env.API_KEY}`

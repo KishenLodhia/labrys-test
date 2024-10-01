@@ -15,7 +15,10 @@ export default function CryptoSearch() {
     setSearchText(lowerCase);
   };
 
-  const filteredTokens = data?.filter((token: Token) => token.name.toLowerCase().includes(searchText));
+  const filteredTokens = data?.filter(
+    (token: Token) =>
+      token.name.toLowerCase().includes(searchText) || token.symbol.toLocaleLowerCase().includes(searchText)
+  );
 
   return (
     <div className="max-w-lg mx-auto">
@@ -24,7 +27,6 @@ export default function CryptoSearch() {
         {searchText && <p>Searching for: {searchText}</p>}
       </div>
 
-      {/* Handling loading, error, and data states */}
       {isLoading && <p>Loading...</p>}
       {isError && <p>Error: {error?.message}</p>}
 
