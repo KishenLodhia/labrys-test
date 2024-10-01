@@ -36,7 +36,7 @@ export default function ListTile({ number, name, subtitle, price, percentage, im
         <div className="font-semibold">{name}</div>
         <div className="text-zinc-400 text-sm">{convertToInternationalCurrencySystem(subtitle)}</div>
       </div>
-      <div className="font-bold w-20">${price.toFixed(2)}</div>
+      <div className="flex flex-row font-bold w-20 justify-end">${price.toFixed(2)}</div>
       <div className={`${percentage >= 0 ? "bg-green-500" : "bg-red-500"} rounded px-2 w-15`}>
         <div
           className={`${
